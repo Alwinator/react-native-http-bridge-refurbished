@@ -1,7 +1,7 @@
 
 {
   "name": "react-native-http-bridge-refurbished",
-  "version": "0.7.1",
+  "version": "0.7.2",
   "description": "A simple HTTP debug server for React Native apps",
   "main": "httpServer.js",
   "repository": {
@@ -22,8 +22,5 @@
   "bugs": {
     "url": "https://github.com/Alwinator/react-native-http-bridge-refurbished/issues"
   },
-  "homepage": "https://github.com/Alwinator/react-native-http-bridge-refurbished#readme",
-  "release": {
-    "branches": ["main"]
-  }
+  "homepage": "https://github.com/Alwinator/react-native-http-bridge-refurbished#readme"
 }
