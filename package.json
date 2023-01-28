@@ -1,7 +1,7 @@
 
 {
   "name": "react-native-http-bridge-refurbished",
-  "version": "0.6.1",
+  "version": "0.7.0",
   "description": "A simple HTTP debug server for React Native apps",
   "main": "httpServer.js",
   "repository": {
@@ -17,7 +17,7 @@
     "server",
     "bridge"
   ],
-  "author": "Alexander Pantyukhov",
+  "author": "Alwin Schuster",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Alwinator/react-native-http-bridge-refurbished/issues"
