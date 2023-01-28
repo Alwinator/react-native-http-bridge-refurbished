@@ -1,7 +1,7 @@
-# react-native-http-bridge
+# react-native-http-bridge-refurbished
+A maintained fork of [react-native-http-bridge](https://github.com/alwx/react-native-http-bridge). 
 
 Simple HTTP server for [React Native](https://github.com/facebook/react-native).
-Created for [Status.im](https://github.com/status-im/status-react). 
 
 Since 0.5.0 supports and handles GET, POST, PUT and DELETE requests.
 The library can be useful for handling requests with `application/json` content type
@@ -12,7 +12,7 @@ Since 0.6.0 can handle millions of requests at the same time and also includes s
 ## Install
 
 ```shell
-npm install --save react-native-http-bridge
+npm install --save react-native-http-bridge-refurbished
 ```
 
 ## Automatically link
@@ -20,21 +20,21 @@ npm install --save react-native-http-bridge
 #### With React Native 0.27+
 
 ```shell
-react-native link react-native-http-bridge
+react-native link react-native-http-bridge-refurbished
 ```
 
 ## Example
 
-First import/require react-native-http-server:
+First import/require react-native-http-bridge-refurbished:
 
 ```js
 
-    var httpBridge = require('react-native-http-bridge');
+    var httpBridge = require('react-native-http-bridge-refurbished');
 
 ```
 
 
-Initalize the server in the `componentWillMount` lifecycle method. You need to provide a `port` and a callback.
+Initialize the server in the `componentWillMount` lifecycle method. You need to provide a `port` and a callback.
 
 ```js
 
