@@ -46,3 +46,4 @@ android/.gradle
 android/build
 local.properties
 android.iml
+package-lock.json
