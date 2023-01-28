@@ -25,41 +25,39 @@ react-native link react-native-http-bridge-refurbished
 
 ## Example
 
-First import/require react-native-http-bridge-refurbished:
+```tsx
+import React, {useEffect} from 'react';
+import {respond, start, stop} from 'react-native-http-bridge-refurbished';
+import {Text} from 'react-native';
 
-```js
+function App(): JSX.Element {
+    const [logs, setLogs] = React.useState<string[]>([]);
 
-    var httpBridge = require('react-native-http-bridge-refurbished');
+    useEffect(() => {
+        start(5561, 'http_service', request => {
+            // you can use request.url, request.type and request.postData here
+            if (request.type === 'GET') {
+                setLogs([...logs, request.url]);
+                respond(
+                    request.requestId,
+                    200,
+                    'application/json',
+                    '{"message": "OK"}',
+                );
+            }
 
-```
+            return () => {
+                stop();
+            };
+        });
+    }, [logs]);
 
+    return (
+        <Text>
+            {logs.length === 0 ? 'Request webserver to change text' : logs.join('\n')}
+        </Text>
+    );
+}
 
-Initialize the server in the `componentWillMount` lifecycle method. You need to provide a `port` and a callback.
-
-```js
-
-    componentWillMount() {
-      // initalize the server (now accessible via localhost:1234)
-      httpBridge.start(5561, 'http_service', request => {
-
-          // you can use request.url, request.type and request.postData here
-          if (request.type === "GET" && request.url.split("/")[1] === "users") {
-            httpBridge.respond(request.requestId, 200, "application/json", "{\"message\": \"OK\"}");
-          } else {
-            httpBridge.respond(request.requestId, 400, "application/json", "{\"message\": \"Bad Request\"}");
-          }
-
-      });
-    }
-
-```
-
-Finally, ensure that you disable the server when your component is being unmounted.
-
-```js
-
-  componentWillUnmount() {
-    httpBridge.stop();
-  }
-
+export default App;
 ```
