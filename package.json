@@ -25,6 +25,9 @@
   "scripts": {
     "semantic-release": "semantic-release"
   },
+  "dependencies": {
+    "react-native": "^0.71.1"
+  },
   "devDependencies": {
     "semantic-release": "^20.1.0"
   },
