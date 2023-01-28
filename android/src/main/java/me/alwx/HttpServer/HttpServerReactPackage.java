@@ -1,4 +1,4 @@
-package me.alwx.HttpServer;
+package at.alwinschuster.HttpServer;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -9,7 +9,7 @@ import com.facebook.react.bridge.NativeModule;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.uimanager.ViewManager;
 import com.facebook.react.bridge.JavaScriptModule;
-import me.alwx.HttpServer.HttpServerModule;
+import at.alwinschuster.HttpServer.HttpServerModule;
 
 public class HttpServerReactPackage implements ReactPackage {
   @Override

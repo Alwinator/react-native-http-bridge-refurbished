@@ -1,4 +1,4 @@
-package me.alwx.HttpServer;
+package at.alwinschuster.HttpServer;
 
 import android.content.Context;
 import com.facebook.react.bridge.ReactApplicationContext;

@@ -1,4 +1,4 @@
-package me.alwx.HttpServer;
+package at.alwinschuster.HttpServer;
 
 import fi.iki.elonen.NanoHTTPD;
 import fi.iki.elonen.NanoHTTPD.Response;
@@ -14,7 +14,7 @@ import java.util.Set;
 import java.util.HashMap;
 import java.util.Random;
 
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.util.Log;
 
 public class Server extends NanoHTTPD {
@@ -72,7 +72,7 @@ public class Server extends NanoHTTPD {
         request.putString("url", session.getUri());
         request.putString("type", method.name());
         request.putString("requestId", requestId);
-        
+
         Map<String, String> files = new HashMap<>();
         session.parseBody(files);
         if (files.size() > 0) {
