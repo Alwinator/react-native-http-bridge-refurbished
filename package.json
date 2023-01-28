@@ -1,12 +1,11 @@
-
 {
   "name": "react-native-http-bridge-refurbished",
-  "version": "0.6.1",
+  "version": "0.0.0-development",
   "description": "A simple HTTP debug server for React Native apps",
   "main": "httpServer.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Alwinator/react-native-http-bridge-refurbished.git"
+    "url": "https://github.com/Alwinator/react-native-http-bridge-refurbished.git"
   },
   "keywords": [
     "react-component",
@@ -17,10 +16,21 @@
     "server",
     "bridge"
   ],
-  "author": "Alexander Pantyukhov",
+  "author": "Alwin Schuster",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Alwinator/react-native-http-bridge-refurbished/issues"
   },
-  "homepage": "https://github.com/Alwinator/react-native-http-bridge-refurbished#readme"
+  "homepage": "https://github.com/Alwinator/react-native-http-bridge-refurbished#readme",
+  "scripts": {
+    "semantic-release": "semantic-release"
+  },
+  "devDependencies": {
+    "semantic-release": "^20.1.0"
+  },
+  "release": {
+    "branches": [
+      "main"
+    ]
+  }
 }
