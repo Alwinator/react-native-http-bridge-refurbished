@@ -15,14 +15,6 @@ Since 0.6.0 can handle millions of requests at the same time and also includes s
 npm install --save react-native-http-bridge-refurbished
 ```
 
-## Automatically link
-
-#### With React Native 0.27+
-
-```shell
-react-native link react-native-http-bridge-refurbished
-```
-
 ## Example
 
 ```tsx
@@ -60,4 +52,14 @@ function App(): JSX.Element {
 }
 
 export default App;
+```
+
+After running the example you can send a request to the server using `curl`:
+
+```shell
+curl http://IP_OF_DEVICE:MY_PORT/hello
+```
+For example:
+```shell
+curl http://192.168.1.109:5561/hello
 ```
