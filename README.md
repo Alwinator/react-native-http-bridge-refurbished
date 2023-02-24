@@ -1,5 +1,11 @@
 # react-native-http-bridge-refurbished
-ImprovA simple HTTP server for [React Native](https://github.com/facebook/react-native) based on [react-native-http-bridge](https://github.com/alwx/react-native-http-bridge).
+
+[![npm](https://img.shields.io/npm/v/react-native-http-bridge-refurbished?style=for-the-badge)](https://www.npmjs.com/package/react-native-http-bridge-refurbished)
+[![npm](https://img.shields.io/npm/dt/react-native-http-bridge-refurbished?style=for-the-badge)](https://www.npmjs.com/package/react-native-http-bridge-refurbished)
+[![GitHub contributors](https://img.shields.io/github/contributors/Alwinator/react-native-http-bridge-refurbished?style=for-the-badge)](https://github.com/Alwinator/react-native-http-bridge-refurbished)
+[![GitHub Repo stars](https://img.shields.io/github/stars/Alwinator/react-native-http-bridge-refurbished?style=for-the-badge)](https://github.com/Alwinator/react-native-http-bridge-refurbished)
+
+A simple HTTP server for [React Native](https://github.com/facebook/react-native) based on [react-native-http-bridge](https://github.com/alwx/react-native-http-bridge).
 
 
 Since 1.2.0 there is a new express-like syntax for handling requests. You can still use the old syntax:
