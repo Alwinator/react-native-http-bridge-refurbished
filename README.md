@@ -30,6 +30,7 @@ function App(): JSX.Element {
             setLogs([...logs, req.url]);
             return {message: 'OK'}; // or res.json({message: 'OK'});
         });
+        server.listen(3000);
         
         return () => {
             server.stop();

@@ -1,7 +1,6 @@
 'use strict';
 
-import {DeviceEventEmitter} from 'react-native';
-import {NativeModules} from 'react-native';
+import {DeviceEventEmitter, NativeModules} from 'react-native';
 const Server = NativeModules.HttpServer;
 
 module.exports = {

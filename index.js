@@ -1,7 +1,9 @@
+'use strict';
+
 import httpServer from "./httpServer";
-import server from "./server";
+import bridgeServer from "./bridgeServer";
 
 module.exports = {
     ...httpServer,
-    ...server
+    ...bridgeServer
 }

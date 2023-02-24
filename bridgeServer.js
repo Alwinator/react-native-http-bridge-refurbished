@@ -1,4 +1,6 @@
-import httpServer from "./index";
+'use strict';
+
+import httpServer from "./httpServer";
 
 class Request {
   constructor(rawRequest) {
