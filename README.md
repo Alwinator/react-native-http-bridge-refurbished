@@ -15,7 +15,38 @@ Since 0.6.0 can handle millions of requests at the same time and also includes s
 npm install --save react-native-http-bridge-refurbished
 ```
 
-## Example
+## Example (New Syntax)
+```tsx
+import React, {useEffect} from 'react';
+import {BridgeServer} from 'react-native-http-bridge-refurbished';
+import {Text} from 'react-native';
+
+function App(): JSX.Element {
+    const [logs, setLogs] = React.useState<string[]>([]);
+
+    useEffect(() => {
+        const server = new BridgeServer('http_service');
+        server.get('/', async (req, res) => {
+            setLogs([...logs, req.url]);
+            return {message: 'OK'}; // or res.json({message: 'OK'});
+        });
+        
+        return () => {
+            server.stop();
+        };
+    }, [logs]);
+
+    return (
+        <Text>
+            {logs.length === 0 ? 'Request webserver to change text' : logs.join('\n')}
+        </Text>
+    );
+}
+
+export default App;
+```
+
+## Example (Old Syntax)
 
 ```tsx
 import React, {useEffect} from 'react';
