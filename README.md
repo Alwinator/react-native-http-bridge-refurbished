@@ -1,8 +1,9 @@
 # react-native-http-bridge-refurbished
-![npm](https://img.shields.io/npm/dt/react-native-http-bridge-refurbished?style=for-the-badge)
-![npm](https://img.shields.io/npm/v/react-native-http-bridge-refurbished?style=for-the-badge)
-![GitHub contributors](https://img.shields.io/github/contributors/Alwinator/react-native-http-bridge-refurbished?style=for-the-badge)
-![GitHub Repo stars](https://img.shields.io/github/stars/Alwinator/react-native-http-bridge-refurbished?style=for-the-badge)
+
+[![npm](https://img.shields.io/npm/v/react-native-http-bridge-refurbished?style=for-the-badge)](https://www.npmjs.com/package/react-native-http-bridge-refurbished)
+[![npm](https://img.shields.io/npm/dt/react-native-http-bridge-refurbished?style=for-the-badge)](https://www.npmjs.com/package/react-native-http-bridge-refurbished)
+[![GitHub contributors](https://img.shields.io/github/contributors/Alwinator/react-native-http-bridge-refurbished?style=for-the-badge)](https://github.com/Alwinator/react-native-http-bridge-refurbished)
+[![GitHub Repo stars](https://img.shields.io/github/stars/Alwinator/react-native-http-bridge-refurbished?style=for-the-badge)](https://github.com/Alwinator/react-native-http-bridge-refurbished)
 
 A maintained fork of [react-native-http-bridge](https://github.com/alwx/react-native-http-bridge). 
 
