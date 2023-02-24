@@ -1,4 +1,9 @@
 # react-native-http-bridge-refurbished
+![npm](https://img.shields.io/npm/dt/react-native-http-bridge-refurbished?style=for-the-badge)
+![npm](https://img.shields.io/npm/v/react-native-http-bridge-refurbished?style=for-the-badge)
+![GitHub contributors](https://img.shields.io/github/contributors/Alwinator/react-native-http-bridge-refurbished?style=for-the-badge)
+![GitHub Repo stars](https://img.shields.io/github/stars/Alwinator/react-native-http-bridge-refurbished?style=for-the-badge)
+
 A maintained fork of [react-native-http-bridge](https://github.com/alwx/react-native-http-bridge). 
 
 Simple HTTP server for [React Native](https://github.com/facebook/react-native).
