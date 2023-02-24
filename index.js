@@ -1,4 +1,4 @@
-import httpServer from "./index";
+import httpServer from "./httpServer";
 import server from "./server";
 
 module.exports = {
