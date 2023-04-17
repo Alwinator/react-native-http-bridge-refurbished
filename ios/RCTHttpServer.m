@@ -96,6 +96,7 @@ RCT_EXPORT_METHOD(respond: (NSString *) requestId
                   type: (NSString *) type
                   body: (NSString *) body)
 {
+    NSData* data = [body dataUsingEncoding:NSUTF8StringEncoding];
     GCDWebServerDataResponse* requestResponse = [[GCDWebServerDataResponse alloc] initWithData:data contentType:type];
     requestResponse.statusCode = code;
 
