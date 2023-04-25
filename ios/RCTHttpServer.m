@@ -1,8 +1,8 @@
 
 #import "RCTHttpServer.h"
-#import "React/RCTBridge.h"
-#import "React/RCTLog.h"
-#import "React/RCTEventDispatcher.h"
+#import <React/RCTBridge.h>
+#import <React/RCTLog.h>
+#import <React/RCTEventEmitter.h>
 
 #import "GCDWebServer.h"
 #import "GCDWebServerDataResponse.h"
@@ -10,7 +10,7 @@
 #import "GCDWebServerPrivate.h"
 #include <stdlib.h>
 
-@interface RCTHttpServer : NSObject <RCTBridgeModule> {
+@interface RCTHttpServer : RCTEventEmitter <RCTBridgeModule> {
     GCDWebServer* _webServer;
     NSMutableDictionary* _completionBlocks;
 }
@@ -24,6 +24,11 @@ static RCTBridge *bridge;
 
 RCT_EXPORT_MODULE();
 
+- (NSArray<NSString *> *)supportedEvents {
+    return @[
+        @"httpServerResponseReceived"
+    ];
+}
 
 - (void)initResponseReceivedFor:(GCDWebServer *)server forType:(NSString*)type {
     [server addDefaultHandlerForMethod:type
@@ -35,25 +40,25 @@ RCT_EXPORT_MODULE();
         NSString *requestId = [NSString stringWithFormat:@"%lld:%d", milliseconds, r];
 
          @synchronized (self) {
-             [_completionBlocks setObject:completionBlock forKey:requestId];
+             [self->_completionBlocks setObject:completionBlock forKey:requestId];
          }
 
         @try {
             if ([GCDWebServerTruncateHeaderValue(request.contentType) isEqualToString:@"application/json"]) {
                 GCDWebServerDataRequest* dataRequest = (GCDWebServerDataRequest*)request;
-                [self.bridge.eventDispatcher sendAppEventWithName:@"httpServerResponseReceived"
+                [self sendEventWithName:@"httpServerResponseReceived"
                                                              body:@{@"requestId": requestId,
                                                                     @"postData": dataRequest.jsonObject,
                                                                     @"type": type,
                                                                     @"url": request.URL.relativeString}];
             } else {
-                [self.bridge.eventDispatcher sendAppEventWithName:@"httpServerResponseReceived"
+                [self sendEventWithName:@"httpServerResponseReceived"
                                                              body:@{@"requestId": requestId,
                                                                     @"type": type,
                                                                     @"url": request.URL.relativeString}];
             }
         } @catch (NSException *exception) {
-            [self.bridge.eventDispatcher sendAppEventWithName:@"httpServerResponseReceived"
+            [self sendEventWithName:@"httpServerResponseReceived"
                                                          body:@{@"requestId": requestId,
                                                                 @"type": type,
                                                                 @"url": request.URL.relativeString}];
