@@ -24,6 +24,11 @@ static RCTBridge *bridge;
 
 RCT_EXPORT_MODULE();
 
+- (void)invalidate {
+    [self stop];
+    [super invalidate];
+}
+
 - (NSArray<NSString *> *)supportedEvents {
     return @[
         @"httpServerResponseReceived"
