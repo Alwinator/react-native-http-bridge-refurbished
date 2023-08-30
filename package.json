@@ -16,7 +16,8 @@
         "gcdhttpserver",
         "http",
         "server",
-        "bridge"
+        "bridge",
+        "webserver"
     ],
     "author": "Alwin Schuster",
     "license": "MIT",
