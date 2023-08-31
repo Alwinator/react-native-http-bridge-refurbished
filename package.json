@@ -1,41 +1,43 @@
 {
-  "name": "react-native-http-bridge-refurbished",
-  "version": "0.0.0-development",
-  "description": "A simple HTTP debug server for React Native apps",
-  "main": "index.js",
-  "types": "index.d.ts",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Alwinator/react-native-http-bridge-refurbished.git"
-  },
-  "keywords": [
-    "react-component",
-    "react-native",
-    "nanohttpd",
-    "gcdhttpserver",
-    "http",
-    "server",
-    "bridge"
-  ],
-  "author": "Alwin Schuster",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/Alwinator/react-native-http-bridge-refurbished/issues"
-  },
-  "homepage": "https://github.com/Alwinator/react-native-http-bridge-refurbished#readme",
-  "scripts": {
-    "semantic-release": "semantic-release"
-  },
-  "dependencies": {
-    "react-native": "^0.72.3"
-  },
-  "devDependencies": {
-    "semantic-release": "^21.0.1"
-  },
-  "release": {
-    "branches": [
-      "main",
-      "next"
-    ]
-  }
+    "name": "react-native-http-bridge-refurbished",
+    "version": "0.0.0-development",
+    "description": "A simple HTTP debug server for React Native apps",
+    "main": "index.js",
+    "types": "index.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Alwinator/react-native-http-bridge-refurbished.git",
+        "directory": "packages/react-native-http-bridge-refurbished"
+    },
+    "keywords": [
+        "react-component",
+        "react-native",
+        "nanohttpd",
+        "gcdhttpserver",
+        "http",
+        "server",
+        "bridge",
+        "webserver"
+    ],
+    "author": "Alwin Schuster",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/Alwinator/react-native-http-bridge-refurbished/issues"
+    },
+    "homepage": "https://github.com/Alwinator/react-native-http-bridge-refurbished#readme",
+    "scripts": {
+        "semantic-release": "semantic-release"
+    },
+    "dependencies": {
+        "react-native": "^0.71.3"
+    },
+    "devDependencies": {
+        "semantic-release": "^21.0.1"
+    },
+    "release": {
+        "branches": [
+            "main",
+            "next"
+        ]
+    }
 }

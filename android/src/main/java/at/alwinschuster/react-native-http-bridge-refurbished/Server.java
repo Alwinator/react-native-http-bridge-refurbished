@@ -1,16 +1,13 @@
 package at.alwinschuster.HttpServer;
 
 import fi.iki.elonen.NanoHTTPD;
-import fi.iki.elonen.NanoHTTPD.Response;
 import fi.iki.elonen.NanoHTTPD.Response.Status;
 import com.facebook.react.bridge.ReactContext;
 import com.facebook.react.bridge.Arguments;
-import com.facebook.react.bridge.ReadableMap;
 import com.facebook.react.bridge.WritableMap;
 import com.facebook.react.modules.core.DeviceEventManagerModule;
 
 import java.util.Map;
-import java.util.Set;
 import java.util.HashMap;
 import java.util.Random;
 

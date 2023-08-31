@@ -1,7 +1,8 @@
 'use strict';
 
-import {DeviceEventEmitter, NativeModules} from 'react-native';
+import {NativeEventEmitter, NativeModules} from 'react-native';
 const Server = NativeModules.HttpServer;
+const ServerEventEmitter = new NativeEventEmitter(Server);
 
 module.exports = {
     start: function (port, serviceName, callback) {
@@ -10,12 +11,12 @@ module.exports = {
         }
 
         Server.start(port, serviceName);
-        DeviceEventEmitter.addListener('httpServerResponseReceived', callback);
+        ServerEventEmitter.addListener('httpServerResponseReceived', callback);
     },
 
     stop: () => {
         Server.stop();
-        DeviceEventEmitter.removeAllListeners('httpServerResponseReceived');
+        ServerEventEmitter.removeAllListeners('httpServerResponseReceived');
     },
 
     respond: (requestId, code, type, body) => Server.respond(requestId, code, type, body)

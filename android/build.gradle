@@ -1,27 +1,29 @@
 buildscript {
     repositories {
-        jcenter()
+        mavenCentral()
     }
+
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.2.0'
+        classpath 'com.android.tools.build:gradle:2.3.0'
     }
 }
 
 allprojects {
     repositories {
-        jcenter()
+        mavenCentral()
     }
 }
 
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 26
-    buildToolsVersion "26.0.2"
+    compileSdkVersion 33
+    buildToolsVersion "33.0.2"
+    namespace "at.alwinschuster.HttpServer"
 
     defaultConfig {
-        minSdkVersion 16
-        targetSdkVersion 22
+        minSdkVersion 21
+        targetSdkVersion 33
         versionCode 2
         versionName "1.1"
         ndk {
