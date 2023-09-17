@@ -29,7 +29,7 @@
         "semantic-release": "semantic-release"
     },
     "dependencies": {
-        "react-native": "^0.71.3"
+        "react-native": "^0.72.4"
     },
     "devDependencies": {
         "semantic-release": "^21.0.1"
