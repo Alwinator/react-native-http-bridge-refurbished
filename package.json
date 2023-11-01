@@ -35,7 +35,7 @@
         "react-native": ">=0.72"
     },
     "devDependencies": {
-        "semantic-release": "^21.0.1"
+        "semantic-release": "^22.0.6"
     },
     "release": {
         "branches": [
