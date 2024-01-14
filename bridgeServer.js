@@ -88,7 +88,7 @@ class BridgeServer {
       const callbacks = this.callbacks.filter(
         c =>
           (c.method === request.type || c.method === '*') &&
-          (c.url === request.url || c.url === '*'),
+          (c.url === request.url.split("?")[0] || c.url === '*'),
       );
 
       for (const c of callbacks) {
