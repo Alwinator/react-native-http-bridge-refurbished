@@ -4,13 +4,30 @@ import httpServer from "./httpServer";
 
 class Request {
   constructor(rawRequest) {
+    const urlSplit = rawRequest.url.split('?');
+    
     this.requestId = rawRequest.requestId;
     this.postData = rawRequest.postData;
+
+    if(urlSplit.length > 1){
+      const regex = /[?&]([^=#]+)=([^&#]*)/g;
+      const params = {};
+      let match;
+      while (match = regex.exec(rawRequest.url)) {
+        params[match[1]] = match[2];
+      }
+      this.getData = params;
+    }else
+      this.getData = undefined;
+    
     this.type = rawRequest.type;
-    this.url = rawRequest.url;
+    this.url = urlSplit[0];
   }
   get data() {
     return JSON.parse(this.postData);
+  }
+  get urlData() {
+    return this.getData;
   }
 }
 class Response {
