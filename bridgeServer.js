@@ -6,11 +6,15 @@ class Request {
   constructor(rawRequest) {
     this.requestId = rawRequest.requestId;
     this.postData = rawRequest.postData;
+    this.getData = rawRequest.getData;
     this.type = rawRequest.type;
     this.url = rawRequest.url;
   }
   get data() {
     return JSON.parse(this.postData);
+  }
+  get urlData() {
+    return this.getData;
   }
 }
 class Response {
