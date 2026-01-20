@@ -10,6 +10,9 @@ import com.facebook.react.modules.core.DeviceEventManagerModule;
 import java.util.Map;
 import java.util.HashMap;
 import java.util.Random;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 
 import androidx.annotation.Nullable;
 import android.util.Log;
@@ -61,6 +64,24 @@ public class Server extends NanoHTTPD {
 
     public void respond(String requestId, int code, String type, String body) {
         responses.put(requestId, newFixedLengthResponse(Status.lookup(code), type, body));
+    }
+
+    public void respondFile(String requestId, int code, String type, String filePath) {
+        File file = new File(filePath);
+        
+        if (!file.exists()) {
+            responses.put(requestId, newFixedLengthResponse(Status.NOT_FOUND, MIME_PLAINTEXT, "File not found"));
+            return;
+        }
+        
+        try {
+            FileInputStream fis = new FileInputStream(file);
+            responses.put(requestId, newFixedLengthResponse(Status.lookup(code), type, fis, file.length()));
+        } catch (FileNotFoundException e) {
+            responses.put(requestId, newFixedLengthResponse(Status.NOT_FOUND, MIME_PLAINTEXT, "File not found"));
+        } catch (Exception e) {
+            responses.put(requestId, newFixedLengthResponse(Status.INTERNAL_ERROR, MIME_PLAINTEXT, e.getMessage()));
+        }
     }
 
     private WritableMap fillRequestMap(IHTTPSession session, String requestId) throws Exception {
