@@ -33,6 +33,15 @@ class Response {
   html(html, code = 200) {
     return this.send(code, 'text/html', html);
   }
+  
+  sendFile(filePath, type, code = 200) {
+    if (this.closed) {
+      throw new Error('Response already sent');
+    }
+    
+    httpServer.respondFile(this.requestId, code, type, filePath);
+    this.closed = true;
+  }
 }
 
 class BridgeServer {

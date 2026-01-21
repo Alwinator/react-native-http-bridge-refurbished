@@ -118,4 +118,38 @@ RCT_EXPORT_METHOD(respond: (NSString *) requestId
         completionBlock(requestResponse);
 }
 
+RCT_EXPORT_METHOD(respondFile: (NSString *) requestId
+                  code: (NSInteger) code
+                  type: (NSString *) type
+                  filePath: (NSString *) filePath)
+{
+    GCDWebServerCompletionBlock completionBlock = nil;
+    @synchronized (self) {
+        completionBlock = [_completionBlocks objectForKey:requestId];
+        [_completionBlocks removeObjectForKey:requestId];
+    }
+    
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    if (![fileManager fileExistsAtPath:filePath]) {
+        GCDWebServerDataResponse* errorResponse = [GCDWebServerDataResponse responseWithText:@"File not found"];
+        errorResponse.statusCode = 404;
+        completionBlock(errorResponse);
+        return;
+    }
+    
+    NSError *error = nil;
+    NSData *fileData = [NSData dataWithContentsOfFile:filePath options:0 error:&error];
+    
+    if (error) {
+        GCDWebServerDataResponse* errorResponse = [GCDWebServerDataResponse responseWithText:[error localizedDescription]];
+        errorResponse.statusCode = 500;
+        completionBlock(errorResponse);
+        return;
+    }
+    
+    GCDWebServerDataResponse* fileResponse = [[GCDWebServerDataResponse alloc] initWithData:fileData contentType:type];
+    fileResponse.statusCode = code;
+    completionBlock(fileResponse);
+}
+
 @end
